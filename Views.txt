@@ -1,3 +1,8 @@
+# SENDING FILE TO THE SERVER
+scp -i .\couchDB1.pem.txt ..\twitter-place-data.zip ubuntu@172.26.130.94:~
+
+# The servers can access each other
+
 # QUERIES
 
 # To get a reduced view
@@ -8,6 +13,8 @@ curl -X GET http://admin:Royai99@127.0.0.1:5984/tweetscovid/_design/place/_view/
 
 #To get covid tweets and aggregate sentiment wrt time and place
 curl -X GET http://admin:Royai99@127.0.0.1:5984/tweetscovid/_design/place/_view/timeplace-sentiment?reduce=true"&"group_level=2
+
+#To save the query to a file, do curl -X GET http://admin:Royai99@127.0.0.1:5984/tweetscovid/_design/place/_view/timeplace-sentiment?reduce=true"&"group_level=2 > twitter.json
 
 #VIEWS
 
