@@ -8,12 +8,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "leaflet": "^1.9.3",
+    "vite": "^4.3.8",
     "vue": "^3.2.25",
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.2.0",
-    "sass": "^1.49.8",
-    "vite": "^2.8.0"
+    "sass": "^1.49.8"
   }
 }

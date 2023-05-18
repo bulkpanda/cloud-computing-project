@@ -16,15 +16,15 @@
 				<span class="material-icons">home</span>
 				<span class="text">Home</span>
 			</router-link>
-			<router-link to="/Scenario1.vue" class="button">
+			<router-link to="/Scenario1" class="button">
 				<span class="material-icons">insights</span>
 				<span class="text">Scenario 1</span>
 			</router-link>
-			<router-link to="/team" class="button">
+			<router-link to="/Scenario2" class="button">
 				<span class="material-icons">insights</span>
 				<span class="text">Scenario 2</span>
 			</router-link>
-			<router-link to="/contact" class="button">
+			<router-link to="/Scenario3" class="button">
 				<span class="material-icons">insights</span>
 				<span class="text">Scenario 3</span>
 			</router-link>
