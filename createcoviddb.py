@@ -45,3 +45,4 @@ for row in jsonfile:
                         'tokens':tokens
                     }
                     db.save(db_entry)
+                    break
