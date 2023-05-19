@@ -1,0 +1,11 @@
+# date and bbox
+curl -X GET http://admin:Royai99@173.26.134.130:5984/tweetscovid/_design/datebbox/_view/new-view?reduce=true"&"group_level=2
+
+# date place sentiment
+curl -X GET http://admin:Royai99@173.26.134.130:5984/tweetscovid/_design/dateplacesentiment/_view/new-view?reduce=true"&"group_level=3
+
+# date place -sentiment
+curl -X GET http://admin:Royai99@173.26.134.130:5984/tweetscovid/_design/dateplace-sentiment/_view/new-view?reduce=true"&"group_level=3
+
+# place
+curl -X GET http://admin:Royai99@173.26.134.130:5984/tweetscovid/_design/place/_view/new-view?reduce=true"&"group_level=1
