@@ -4,8 +4,13 @@ curl -X GET http://admin:Royai99@173.26.134.130:5984/tweetscovid/_design/datebbo
 # date place sentiment
 curl -X GET http://admin:Royai99@173.26.134.130:5984/tweetscovid/_design/dateplacesentiment/_view/new-view?reduce=true"&"group_level=3
 
-# date place -sentiment
+# date place -sentiment (number)
 curl -X GET http://admin:Royai99@173.26.134.130:5984/tweetscovid/_design/dateplace-sentiment/_view/new-view?reduce=true"&"group_level=3
 
 # place
 curl -X GET http://admin:Royai99@173.26.134.130:5984/tweetscovid/_design/place/_view/new-view?reduce=true"&"group_level=1
+
+# PROFANITY
+
+#place and profanity counts
+curl -X GET http://admin:Royai99@127.0.0.1:5984/tweetsprofain/_design/placeproftext/_view/new-view?reduce=true"&"group_level=2
