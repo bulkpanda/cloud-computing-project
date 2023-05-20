@@ -23,6 +23,7 @@ def get_hotwords(text):
 # start the database
 dbname='toots'
 dbaddress='http://admin:Royai99@127.0.0.1:5984/'
+#dbaddress='http://admin:Royai99@172.26.134.130:5984/' #change the address to the couchdb server
 couch = couchdb.Server(dbaddress)
 if dbname in couch:
     del couch[dbname]
