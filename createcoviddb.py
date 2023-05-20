@@ -5,7 +5,7 @@ import json
 keyterms=['covid', 'covid-19', 'coronavirus', 'covid-vaccine', 'vaccines', 'vaccine']
 dbname='tweetscovid'
 dbaddress='http://admin:Royai99@127.0.0.1:5984/' #local host
-dbaddress='http://admin:Royai99@172.26.134.130:5984/' #change the address to the couchdb server
+#dbaddress='http://admin:Royai99@172.26.134.130:5984/' #change the address to the couchdb server
 couch = couchdb.Server(dbaddress)
 if dbname in couch:
     del couch[dbname]
@@ -17,9 +17,6 @@ filename='C:/Users/Kunal Patel/D folder/_Master_data_science/Cluster and Cloud C
 jsonfile=open(filename,'r', encoding='utf-8')
 i=-1
 for row in jsonfile:
-    # i+=1
-    # if(i%10==0):
-        # print(row[:-2])
         try:
             data = json.loads(row[:-2])
         except:

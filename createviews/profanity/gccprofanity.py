@@ -1,6 +1,6 @@
 import logging
 import couchdb
-dbname='tweetsprofain'
+dbname='tweetsprofane'
 dbaddress='http://admin:Royai99@127.0.0.1:5984/'
 couch=couchdb.Server(dbaddress)
 db=couch[dbname]
@@ -11,7 +11,7 @@ def createView( dbConn, designDoc, viewName, mapFunction ):
             "views": {
                 viewName: {
                     "map": mapFunction,
-                    "reduce":"_stats"
+                    "reduce":"_count"
                     }
             },
             "language": "javascript",
@@ -21,8 +21,19 @@ def createView( dbConn, designDoc, viewName, mapFunction ):
     dbConn.save( data )
 
 mapFunction = '''function (doc) {
-  if(doc.place.full_name){
-    emit(doc.place.full_name,doc.profanity);
+  if(doc.region_code){
+    var prof=doc.profanity;
+    var proftext='';
+    if(prof>0.7){
+      proftext='high';
+    }
+    if(prof<=0.7 && prof>0.4){
+      proftext='mid';
+    }
+    if(prof<=0.4){
+      proftext='low'
+    }
+    emit([doc.region_code,proftext],1);
   }
 }'''
-createView( db, "placeprofvalue", "new-view", mapFunction )
+createView( db, "gccprofanity", "new-view", mapFunction )

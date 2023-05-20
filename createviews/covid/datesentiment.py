@@ -11,7 +11,7 @@ def createView( dbConn, designDoc, viewName, mapFunction ):
             "views": {
                 viewName: {
                     "map": mapFunction,
-                    "reduce":"_stats"
+                    "reduce":"_count"
                     }
             },
             "language": "javascript",
@@ -21,9 +21,14 @@ def createView( dbConn, designDoc, viewName, mapFunction ):
     dbConn.save( data )
 
 mapFunction = '''function (doc) {
-  if(doc.place.full_name){
-    var date=doc.time.split('T');
-    emit([date[0], doc.place.full_name], doc.sentiment);
-  }
+    var date=doc.time.split('T')[0];
+    var sentiment = 'neutral';
+    if(doc.sentiment>0.1){
+      sentiment='positive';
+    }
+    else if(doc.sentiment<-0.1) {
+      sentiment='negative';
+    }
+    emit([date, sentiment], 1);
 }'''
-createView( db, "dateplace-sentiment", "new-view", mapFunction )
+createView( db, "datesentiment", "new-view", mapFunction )
