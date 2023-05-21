@@ -1,0 +1,71 @@
+# SENDING FILE TO THE SERVER
+scp -i .\couchDB1.pem.txt ..\twitter-place-data.zip ubuntu@172.26.130.94:~
+
+# Connect to the server
+ssh -i .\couchDB1.pem.txt ubuntu@172.26.130.94
+
+# The servers can access each other
+
+# TMUX (To run process in the background)
+tmux new -As profane
+exit screen Ctrl+d
+
+# To delete a database
+curl -X DELETE http://admin:Royai99@127.0.0.1:5984/tweets
+
+# QUERIES----------------------------------------------------------------------------------------------
+
+# To get a reduced view
+curl -X GET http://admin:Royai99@127.0.0.1:5984/tweetspart/_design/ddoc/_view/citycount?reduce=true"&"group_level=1
+
+#To get covid tweets wrt date and place
+curl -X GET http://admin:Royai99@127.0.0.1:5984/tweetscovid/_design/place/_view/timeplacesentiment?reduce=true"&"group_level=2
+
+#To get covid tweets and aggregate sentiment wrt time and place
+curl -X GET http://admin:Royai99@127.0.0.1:5984/tweetscovid/_design/place/_view/timeplace-sentiment?reduce=true"&"group_level=2
+
+# To get profanity place wise
+curl -X GET http://admin:Royai99@127.0.0.1:5984/tweetsprofane/_design/placeproftext/_view/new-view?reduce=true"&"group_level=2
+
+#To save the query to a file, do curl -X GET http://admin:Royai99@127.0.0.1:5984/tweetscovid/_design/place/_view/timeplace-sentiment?reduce=true"&"group_level=2 > twitter.json
+
+#To check if view is being created 
+curl -X GET http://admin:Royai99@127.0.0.1:5984/tweetsprofane/_design/placeproftext/_view/new-view?stale=ok
+
+# remove unused views
+curl -X GET http://admin:Royai99@127.0.0.1:5984/tweetsprofane/_view_cleanup
+
+
+#VIEWS----------------------------------------------------------------------------------------------
+
+#1. To get date, place and sentiment wise data (timeplacesentiment)
+function (doc) {
+  if(doc.place.full_name){
+    var date=doc.time.split('T');
+    var sentiment = 'neutral';
+    if(doc.sentiment>0){
+      sentiment='positive';
+    }
+    else if(doc.sentiment<0) {
+      sentiment='negative';
+    }
+    emit([date[0], doc.place.full_name, sentiment], 1)
+  }
+}
+
+#2. Average sentiment (timeplace-sentiment)
+function (doc) {
+  if(doc.place.full_name){
+    var date=doc.time.split('T');
+    emit([date[0], doc.place.full_name], doc.sentiment);
+  }
+}
+
+# Command to create views------------------------------------------------------------------------------------
+curl -X PUT http://admin:Royai99@127.0.0.1:5984/tweetsukraine/_design/counts --data '{"views":{"language":{"map":"function(doc) { if(doc.place.full_name){emit([doc.place.full_name],1);}}", "reduce":"_count"}}}' --header 'Content-Type:application/json'
+ 
+# Packages
+pip install spacy
+python -m spacy download en_core_web_sm
+pip install vader
+pip install nltk
