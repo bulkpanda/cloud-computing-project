@@ -55,7 +55,7 @@ hottokenstems=list(set(hottokenstems))
 print(hottokenstems)
 data={
     'date':date,
-    'sentiment':sentiment,
+    'sentiment':sentimentscore,
     'hottokens':hottokenstems
 }
 # save to the couchdb server
