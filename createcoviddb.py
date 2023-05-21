@@ -11,8 +11,8 @@ if dbname in couch:
     db=couch.create(dbname)
 else:
     db=couch.create(dbname)
-filename='twitter-place-data.json'
 filename='C:/Users/Kunal Patel/D folder/_Master_data_science/Cluster and Cloud Computing/assignment 2/twitter-profane.json'
+filename='/home/ubuntu/tweetdata/twitter-profane.json'
 jsonfile=open(filename,'r', encoding='utf-8')
 i=1
 data_array=[]
