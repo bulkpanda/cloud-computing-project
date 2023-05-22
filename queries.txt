@@ -18,7 +18,7 @@
     . {["gcc", "sentiment"], count}
     curl -X GET 'http://admin:Royai99@127.0.0.1:5984/tweetscovid/_design/gccsentiment/_view/new-view?reduce=true&group_level=2'
 
-* dategccsentiment
+* datesentiment
     . {["date"], count}
     curl -X GET 'http://admin:Royai99@127.0.0.1:5984/tweetscovid/_design/datesentiment/_view/new-view?reduce=true&group_level=1'
     . {["date", "sentiment"], count}
@@ -78,21 +78,21 @@ curl -X GET 'http://admin:Royai99@127.0.0.1:5984/tweetsprofane/_design/bboxprofa
 
 * datehotwords
     . {["date"], count}
-    curl -X GET 'http://admin:Royai99@127.0.0.1:5984/toots/_design/datehotwords/_view/new-view?reduce=true&group_level=1'
+    curl -X GET 'http://admin:Royai99@127.0.0.1:5984/mastodon_toots/_design/datehotwords/_view/new-view?reduce=true&group_level=1'
     . {["date","hotwords"], count}
-    curl -X GET 'http://admin:Royai99@127.0.0.1:5984/toots/_design/datehotwords/_view/new-view?reduce=true&group_level=2'
+    curl -X GET 'http://admin:Royai99@127.0.0.1:5984/mastodon_toots/_design/datehotwords/_view/new-view?reduce=true&group_level=2'
 
 * datesentiment
     . {["date"], count}
-    curl -X GET 'http://admin:Royai99@127.0.0.1:5984/toots/_design/datesentiment/_view/new-view?reduce=true&group_level=1'
+    curl -X GET 'http://admin:Royai99@127.0.0.1:5984/mastodon_toots/_design/datesentiment/_view/new-view?reduce=true&group_level=1'
     . {["date","sentiment"], count}
-    curl -X GET 'http://admin:Royai99@127.0.0.1:5984/toots/_design/datesentiment/_view/new-view?reduce=true&group_level=2'
+    curl -X GET 'http://admin:Royai99@127.0.0.1:5984/mastodon_toots/_design/datesentiment/_view/new-view?reduce=true&group_level=2'
 
 * hotwordsentiment
     . {["hotword"], count}
-    curl -X GET 'http://admin:Royai99@127.0.0.1:5984/toots/_design/hotwordsentiment/_view/new-view?reduce=true&group_level=1'
+    curl -X GET 'http://admin:Royai99@127.0.0.1:5984/mastodon_toots/_design/hotwordsentiment/_view/new-view?reduce=true&group_level=1'
     . {["hotword", "sentiment"], count}
-    curl -X GET 'http://admin:Royai99@127.0.0.1:5984/toots/_design/hotwordsentiment/_view/new-view?reduce=true&group_level=2'
+    curl -X GET 'http://admin:Royai99@127.0.0.1:5984/mastodon_toots/_design/hotwordsentiment/_view/new-view?reduce=true&group_level=2'
 # POPULATION--------------------------------------------------------------------------------------------------------------------------------
 * gccpopulation
     . {["gcc], {sum, count...}}  # we only need to use sum

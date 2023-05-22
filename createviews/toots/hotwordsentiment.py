@@ -1,7 +1,7 @@
 import logging
 import couchdb
-dbname='toots'
-dbaddress='http://admin:Royai99@127.0.0.1:5984/'
+dbname='mastodon_toots'
+dbaddress='http://admin:Royai99@172.26.131.200/'
 couch=couchdb.Server(dbaddress)
 db=couch[dbname]
 
