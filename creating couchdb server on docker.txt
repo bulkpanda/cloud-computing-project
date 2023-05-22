@@ -1,0 +1,59 @@
+# step 1: attach volumes to the instances
+
+# step 2: mount those volumes
+
+    #!/bin/bash
+    # TODO: Make this an ansible file?
+
+    sudo fdisk -l
+    # df -h
+
+    sudo mkdir /home/ubuntu/data
+    sudo mkfs.ext4 /dev/vdb
+
+
+    sudo nano /etc/fstab 
+    # # add this line to end
+    # /dev/vdb /home/ubuntu/data ext4 defaults 0 2
+
+    # then run:
+    sudo mount -a
+
+# step 3: install docker on the instances
+
+# step 4: change docker volume path to attached volume (if first time setup)
+ExecStart=/usr/bin/dockerd --data-root /new_location/ -H fd:// $DOCKER_OPTS
+
+# step 5: sudo docker pull ibmcom/couchdb3:3.2.1
+
+# step 6: create docker volume 
+        sudo docker volume create --name couchdb
+
+# creating couchdb server on docker
+
+sudo docker create\
+      --name couchdb${masternode}\
+      -v couchdb:/opt/couchdb/data\
+      -p 5984:5984\
+      -p 4369:4369\
+      -p 9100-9200:9100-9200\
+      --env COUCHDB_USER=${user}\
+      --env COUCHDB_PASSWORD=${pass}\
+      --env COUCHDB_SECRET=${cookie}\
+      --env ERL_FLAGS="-setcookie \"${cookie}\" -name \"couchdb@${masternode}\""\
+      ibmcom/couchdb3:${VERSION}
+
+
+declare conts=(`sudo docker ps --all | grep couchdb | cut -f1 -d' ' | xargs -n${size} -d'\n'`)
+
+for cont in "${conts[@]}"; do sudo docker start ${cont}; done
+
+for cont in "${conts[@]}"; do sudo docker rm --force ${cont}; done
+
+
+export declare nodes=(172.26.135.183 172.26.130.94 172.26.131.200) # server 2
+export declare nodes=(172.26.130.94 172.26.135.183 172.26.131.200) # server 3
+export declare nodes=(172.26.131.200 172.26.135.183 172.26.130.94) # server 4
+
+export pass='Royai99'
+export cookie='monkey'
