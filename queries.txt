@@ -100,7 +100,7 @@ curl -X GET 'http://admin:Royai99@127.0.0.1:5984/tweetsprofane/_design/bboxprofa
 
 * datesplitcontent
     .{[date],"content"} to get toots of last minute yy, mm, dd, h, m, s 
-    curl -g -X GET 'http://admin:Royai99@172.26.131.200/mastodon_toots/_design/datesplitcontent/_view/new-view?startkey=["2023","05","23","03","51",null]'
+    curl -g -X GET 'http://admin:Royai99@172.26.131.200/mastodon_toots/_design/datesplitcontent/_view/new-view?startkey=["2023","05","23","03", null, null]'
 
 * 
 # POPULATION--------------------------------------------------------------------------------------------------------------------------------

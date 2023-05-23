@@ -54,6 +54,10 @@ for cont in "${conts[@]}"; do sudo docker rm --force ${cont}; done
 export declare nodes=(172.26.135.183 172.26.130.94 172.26.131.200) # server 2
 export declare nodes=(172.26.130.94 172.26.135.183 172.26.131.200) # server 3
 export declare nodes=(172.26.131.200 172.26.135.183 172.26.130.94) # server 4
-
 export pass='Royai99'
 export cookie='monkey'
+
+
+# Dependencies
+sudo apt install python3-pip
+pip install couchdb
