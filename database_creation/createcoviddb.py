@@ -1,18 +1,31 @@
-## Adding JSON database to couchDB
-# Number of tweets in couchDB file=3236320
+"""
+    Cluster and Cloud Computing 2023
+    Assignment 2
+    Team 46
+
+    Kunal Patel : 1291822
+    Mayank Yadav : 1403092
+    Harsh Mangla : 1418017
+    Sophie von Doussa : 1064884
+    Maxson Stephen Mathew : 1428525
+
+    City : Melbourne
+"""
 import couchdb
 import json
 keyterms=['covid', 'covid-19', 'coronavirus', 'covid-vaccine']
-dbname='tweetscovid'
+dbname='tweetscovid'                                            # get the database name
 dbaddress='http://admin:Royai99@127.0.0.1:5984/' #change the address to the couchdb server
 couch = couchdb.Server(dbaddress)
-if dbname in couch:
+if dbname in couch:                                 # create a new database if older one exist
     del couch[dbname]
     db=couch.create(dbname)
 else:
     db=couch.create(dbname)
-filename='C:/Users/Kunal Patel/D folder/_Master_data_science/Cluster and Cloud Computing/assignment 2/twitter-profane.json'
+
+ # file's whose data needs to be read
 filename='/home/ubuntu/tweetdata/twitter-profane.json'
+
 jsonfile=open(filename,'r', encoding='utf-8')
 i=1
 data_array=[]
@@ -28,6 +41,6 @@ for row in jsonfile:
                 if word.lower() in keyterms:
                     data_array.append(data)
                     break
-        if(len(data_array))==100:
+        if(len(data_array))==100:                   # creating database with covid tweets
              db.update(data_array)
              data_array=[]

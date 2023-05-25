@@ -1,0 +1,9 @@
+matplotlib
+html2text
+Mastodon.py
+nltk
+vaderSentiment
+spacy
+couchdb
+langdetect
+configparser
