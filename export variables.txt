@@ -1,8 +1,0 @@
-export declare nodes=(172.26.135.183 172.26.130.94 172.26.131.200)
-export masternode=`echo ${nodes} | cut -f1 -d' '`
-export declare othernodes=`echo ${nodes[@]} | sed s/${masternode}//`
-export size=${#nodes[@]}
-export user='admin'
-export pass='Royai99'
-export VERSION='3.2.1'
-export cookie='monkey'
