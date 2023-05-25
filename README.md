@@ -1,11 +1,19 @@
 
-### COMP90024 Project 2: Negative Sentiment Analysis Based on Tweets in Australia
+### COMP90024 Project 2: Covid and Profanity tweets alongside toot analysis in Australia
+# CCC Group 46 
+Team Members:
 
-This is the Project 2 for COMP90024 (Cluster and Cloud Computing) from the University of Melbourne.
+Sophie Von Doussa - 1064884  
+Kunal Patel - 1291822
+Mayank Yadav - 1403092  
+Harsh Mangla - 1418017
+Maxson Mathew - 1428525
 
-The	goal of this project is to develop	a	Cloud-based	solution	that	exploits	virtual	machines	(VMs)	on the	UniMelb Research	Cloud	for	harvesting	and	processing	Mastodon	toots.	The	teams	should	produce	a	solution that	can	be	run	(in	principle)	across	any	node	of	 the	UniMelb Research	Cloud	 to	harvest	and	store	social	 media data and	 scale	 up/down	 as	 required with	 the	 data	 being	 harvested,	 processed	 and incorporated	into	the	existing (running) CouchDB	database.
+This is the Assignment 2 for COMP90024 (Cluster and Cloud Computing) from the University of Melbourne.
 
-For more details, please check the [project specifications](https://github.com/Andy-TK/COMP90024_Project2/blob/master/project%20specifications.pdf) and [project report](https://github.com/Andy-TK/COMP90024_Project2/blob/master/CCC-Team35-Report.pdf).
+The	goal of this project is to develop a	Cloud-based	solution	that	exploits	virtual	machines	(VMs)	on the	UniMelb Research	Cloud	for	harvesting	and	processing	Mastodon	toots.	The	teams	should	produce	a	solution that	can	be	run	(in	principle)	across	any	node	of	 the	UniMelb Research	Cloud	 to	harvest	and	store	social	 media data and	 scale	 up/down	 as	 required with	 the	 data	 being	 harvested,	 processed	 and incorporated	into	the	existing (running) CouchDB	database.
+
+For more details, please check the [project report](https://github.com/bulkpanda/cloud-computing-project/blob/master/Team_46_report.pdf).
 
 ### 1. The Architecture and Website Demo
 
