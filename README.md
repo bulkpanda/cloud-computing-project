@@ -13,7 +13,7 @@ In this project, four virtual machines (Ubuntu) were built on the [Nectar](https
 
 #### 1.1. The Architecture**
 
-<img src="https://github.com/bulkpanda/cloud-computing-project/master/images/architecture.png" alt="architecture" width="50%">
+<img src="https://github.com/bulkpanda/cloud-computing-project/blob/master/images/architecture.png" alt="architecture" width="50%">
 
 #### 1.2. The Website Demo
 
