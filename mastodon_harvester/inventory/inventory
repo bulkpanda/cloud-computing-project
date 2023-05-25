@@ -1,0 +1,8 @@
+[mastodon_harvester]
+172.26.128.250
+
+
+[mastodon_harvester:vars] 
+ansible_user=ubuntu 
+ansible_ssh_private_key_file=couchDB1.pem 
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'

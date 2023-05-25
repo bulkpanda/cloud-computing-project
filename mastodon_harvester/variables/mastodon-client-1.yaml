@@ -1,0 +1,23 @@
+### Change this when you want to deploy a mastodon client on a new server
+
+# ## Server name must adhere to [a-zA-Z0-9][a-zA-Z0-9_.-]
+server_name: mastodon.au
+base_url: "https://mastodon.au/"
+mastodon_access_token: "b2Fn9yiPINe41mrqVTfxQGZMnTyRj6rRo9PvQ9F9GGE"
+
+# server_name: mastodon.social_federated
+# base_url: "https://mastodon.social"
+# mastodon_access_token: "OLsfw0HsJcDEE_ZWy7JODUjYNs3--boGcJ7H8DLEWeQ"
+
+# server_name: mastodon.social
+# base_url: "https://mastodon.social"
+# mastodon_access_token: "OLsfw0HsJcDEE_ZWy7JODUjYNs3--boGcJ7H8DLEWeQ"
+
+
+# server_name: aus.social
+# base_url: "https://aus.social"
+# mastodon_access_token: "SwAHYa7aMi_ygQACIbXHhYECsMaewLs1xemWM6l3f0M"
+
+# server_name: mastodon.cloud
+# base_url: "https://mastodon.cloud/"
+# mastodon_access_token: "QvsAIbig4fu-XI5B9rb1JZ7cHfIWepdyx_ECg0t2RlI"

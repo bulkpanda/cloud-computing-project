@@ -1,0 +1,5 @@
+# ## Server name must adhere to [a-zA-Z0-9][a-zA-Z0-9_.-]
+
+server_name: mastodon.cloud
+base_url: "https://mastodon.cloud/"
+mastodon_access_token: "QvsAIbig4fu-XI5B9rb1JZ7cHfIWepdyx_ECg0t2RlI"

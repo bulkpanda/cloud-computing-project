@@ -1,0 +1,49 @@
+# Cluster and Cloud Computing 2023
+# Assignment 2
+# Team 46
+
+# Kunal Patel : 1291822
+# Mayank Yadav : 1403092
+# Harsh Mangla : 1418017
+# Sophie von Doussa : 1064884
+# Maxson Stephen Mathew : 1428525
+
+# City : Melbourne
+---
+- name: create build directory
+  ansible.builtin.file:
+    path: ./docker
+    state: directory
+    mode: '0777'
+    # mode: '0755' -> if do this need become: yes on other tasks
+  become: yes
+
+- name: copy files to VM
+  ansible.builtin.copy:
+    src: "./{{ item.file_name }}"
+    dest: "./docker/{{ item.file_name }}"
+    mode: '0644'
+  loop:
+    - file_name: Dockerfile
+    - file_name: requirements.txt
+    - file_name: mastodonStreamer.py
+    - file_name: tootProcessor.py
+    - file_name: config.ini
+
+
+- name: Remove image with same name
+  community.docker.docker_image:
+    name: mastodon-harvester-image
+    state: absent
+    force_absent: True
+
+
+- name: Build image from Dockerfile
+  community.docker.docker_image:
+    name: mastodon-harvester-image
+    build:
+      path: ./docker
+    source: build
+    state: present
+
+

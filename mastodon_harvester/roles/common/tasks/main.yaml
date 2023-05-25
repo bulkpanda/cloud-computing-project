@@ -1,0 +1,31 @@
+# Cluster and Cloud Computing 2023
+# Assignment 2
+# Team 46
+
+# Kunal Patel : 1291822
+# Mayank Yadav : 1403092
+# Harsh Mangla : 1418017
+# Sophie von Doussa : 1064884
+# Maxson Stephen Mathew : 1428525
+
+# City : Melbourne
+---
+- name: Gather facts of remote host
+  ansible.builtin.setup:
+    gather_subset: all
+  
+- name: Install dependencies
+  tags: always
+  become: yes
+  ansible.builtin.apt:
+    name: ['apt-transport-https', 'build-essential', 'ca-certificates', 'curl', 'git', 'python3-dev', 'python3-pip', 'python3-setuptools', 'software-properties-common', 'unzip', 'vim']
+    state: latest
+    install_recommends: no
+    update_cache: yes
+
+- name: Update pip
+  tags: always
+  become: yes
+  ansible.builtin.pip:
+    name: ['pip']
+    state: latest

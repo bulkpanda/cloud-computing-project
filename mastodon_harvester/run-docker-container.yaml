@@ -1,0 +1,47 @@
+# Cluster and Cloud Computing 2023
+# Assignment 2
+# Team 46
+
+# Kunal Patel : 1291822
+# Mayank Yadav : 1403092
+# Harsh Mangla : 1418017
+# Sophie von Doussa : 1064884
+# Maxson Stephen Mathew : 1428525
+
+# City : Melbourne
+- hosts: mastodon_harvester
+  gather_facts: true
+  vars_files:
+    - variables/mastodon-client-1.yaml
+
+
+  roles:
+    - role: stop-docker-container
+    - role: start-docker-container
+  # tasks:
+  #   - name: Remove a container with same name if exists
+  #     community.docker.docker_container:
+  #       name: "{{ server_name }}_container"
+  #       state: absent
+
+  #   - name: Run docker container
+  #     community.docker.docker_container:
+  #       name: "{{ server_name }}_container"
+  #       image: mastodon-harvester-image
+  #       command: ["python3", "mastodonStreamer.py", "{{ base_url }}", "{{ mastodon_access_token }}"]
+  #       interactive: false
+  #       default_host_ip: ""
+  #       state: started
+
+  #   - name: Get info about container
+  #     community.docker.docker_container_info:
+  #       name: "{{ server_name }}_container"
+  #     register: result
+
+  #   - name: Print info about container
+  #     ansible.builtin.debug:
+  #       msg: "{{ result }}"
+
+      
+
+      

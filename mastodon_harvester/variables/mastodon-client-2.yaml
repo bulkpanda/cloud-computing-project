@@ -1,0 +1,5 @@
+# ## Server name must adhere to [a-zA-Z0-9][a-zA-Z0-9_.-]
+
+server_name: aus.social
+base_url: "https://aus.social"
+mastodon_access_token: "SwAHYa7aMi_ygQACIbXHhYECsMaewLs1xemWM6l3f0M"
