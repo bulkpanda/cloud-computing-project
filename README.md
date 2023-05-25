@@ -3,11 +3,11 @@
 # CCC Group 46 
 Team Members:
 
-Sophie Von Doussa - 1064884  
-Kunal Patel - 1291822
-Mayank Yadav - 1403092  
-Harsh Mangla - 1418017
-Maxson Mathew - 1428525
+Sophie Von Doussa - 1064884  <br>
+Kunal Patel - 1291822 <br>
+Mayank Yadav - 1403092  <br>
+Harsh Mangla - 1418017 <br>
+Maxson Mathew - 1428525 <br>
 
 This is the Assignment 2 for COMP90024 (Cluster and Cloud Computing) from the University of Melbourne.
 
