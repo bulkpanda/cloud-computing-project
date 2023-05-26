@@ -1,0 +1,61 @@
+This folder houses the Ansible playbook that handles the configuration of the Mastodon harvester instance. It orchestrates the process of creating a Docker image and subsequently deploying containers based on that image. These containers are designed to efficiently harvest tweets from specified servers, making this playbook an essential component of our system's functionality.
+
+Usage Instructions:
+- Create an instance manually on the MRC
+  - Flavor: uom.mse.1c4g
+  - Network:  qh2-uom-internal
+  - Source: NeCTAR Ubuntu 20.04 LTS (Focal) amd64
+  - Security groups:  ssh, http, rdp and default
+- Ensure instance IP and private key for ssh connection are specified in /inventory/inventory file
+- Ensure config.ini contains the updated CouchDB IP adresses and database name for toots
+
+- To configure the instance run:
+./run-mastodon-setup.sh
+
+- To deploy a client harvester, specify the server name, base url and mastodon access token within a /variables/mastodon-client-X.yaml
+- Ensure this variable file is specified in run-docker-container.yaml under vars_files
+- To deploy container run:
+./run-docker-container.sh
+
+- To remove a client harvester, specify the server name in /variables/delete-client.yaml and run:
+./stop-docker-container.sh
+
+
+
+Directory Structure:
+
+mastodon_harvester
+├── Dockerfile
+├── config.ini
+├── inventory
+│   └── inventory
+├── mastodonStreamer.py
+├── requirements.txt
+├── roles
+│   ├── build-docker-image
+│   │   └── tasks
+│   │       └── main.yaml
+│   ├── common
+│   │   └── tasks
+│   │       └── main.yaml
+│   ├── install-docker
+│   │   └── tasks
+│   │       └── main.yaml
+│   ├── start-docker-container
+│   │   └── tasks
+│   │       └── main.yaml
+│   └── stop-docker-container
+│       └── tasks
+│           └── main.yaml
+├── run-docker-container.sh
+├── run-docker-container.yaml
+├── run-mastodon-setup.sh
+├── run-mastodon-setup.yaml
+├── stop-docker-container.sh
+├── stop-docker-container.yaml
+├── tootProcessor.py
+└── variables
+    ├── delete-client.yaml
+    ├── mastodon-client-1.yaml
+    ├── mastodon-client-2.yaml
+    └── mastodon-client-3.yaml
