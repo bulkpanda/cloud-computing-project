@@ -35,5 +35,5 @@ In this project, six virtual machines (Ubuntu) were built on the [Nectar](https:
 * **Harvest** - Setting up mastodon harvesters
 * **CouchDB** - [CouchDB](http://couchdb.apache.org/) cluster and [Map-Reduce](https://docs.couchdb.org/en/stable/ddocs/views/intro.html)
 * **Data Analysis** - a _Python module_ [vaderSentiment](https://vadersentiment.readthedocs.io/en/latest/) for sentiment analysis
-* **Data Visualization** - Plotly
+* **Data Visualization** - Plotly, leaflet, ggplot2
 * **Website** - Based on R shiny.
