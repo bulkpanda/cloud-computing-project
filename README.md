@@ -21,7 +21,7 @@ Videos at: <br>
 
 ### 1. The Architecture and Website Demo
 
-In this project, six virtual machines (Ubuntu) were built on the [Nectar](https://nectar.org.au/) cloud platform, three of which deployed [CouchDB](http://couchdb.apache.org/) clusters, one with backup server, one deployed the mastodon harvesters using ansible for automated deployment and one deployed dashboard via R shiny. Collect toots from harvesters, store them into CouchDB, use the relevant Python libraries for sentiment and profanity analysis, and visualize the front end of the results.
+In this project, six virtual machines (Ubuntu) were built on the [Nectar](https://nectar.org.au/) cloud platform, three of which deployed [CouchDB](http://couchdb.apache.org/) clusters, one with backup server, one deployed the mastodon harvesters using ansible for automated deployment and one deployed dashboard via R shiny. Toots are collected from harvesters, python libraries are used for sentiment and profanity analysis, the processed data is then stored at the couchDB cluster, views are created to get relevant information from the database and the dashboard then visualises the results.
 
 #### 1.1. The Architecture**
 
