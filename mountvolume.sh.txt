@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+sudo fdisk -l
+# df -h
+
+sudo mkdir /home/ubuntu/data
+sudo mkfs.ext4 /dev/vdb
+sudo echo "/dev/vdb /home/ubuntu/data ext4 defaults 0 2" | tee -a /etc/fstab
+#sudo nano /etc/fstab 
+# # add this line to end
+# /dev/vdb /home/ubuntu/data ext4 defaults 0 2
+
+# then run:
+sudo mount -a
