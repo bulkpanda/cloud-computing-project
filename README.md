@@ -16,7 +16,7 @@ The	goal of this project is to develop a	Cloud-based	solution	that	exploits	virt
 For more details, please check the [project report](https://github.com/bulkpanda/cloud-computing-project/blob/master/Team_46_report.pdf).
 
 Videos at:
-[Dashboard](https://youtu.be/J9P2MBzP1Wo)
+[Dashboard](https://youtu.be/J9P2MBzP1Wo) <br>
 [Architecture](https://youtu.be/le-mBZZM7e4)
 
 ### 1. The Architecture and Website Demo
