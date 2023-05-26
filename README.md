@@ -13,7 +13,7 @@ This is the Assignment 2 for COMP90024 (Cluster and Cloud Computing) from the Un
 
 The	goal of this project is to develop a	Cloud-based	solution	that	exploits	virtual	machines	(VMs)	on the	UniMelb Research	Cloud	for	harvesting	and	processing	Mastodon	toots.	The	teams	should	produce	a	solution that	can	be	run	(in	principle)	across	any	node	of	 the	UniMelb Research	Cloud	 to	harvest	and	store	social	 media data and	 scale	 up/down	 as	 required with	 the	 data	 being	 harvested,	 processed	 and incorporated	into	the	existing (running) CouchDB	database.
 
-For more details, please check the [project report](https://github.com/bulkpanda/cloud-computing-project/blob/master/Team_46_report.pdf).
+For more details, please check the [project report](https://github.com/bulkpanda/cloud-computing-project/blob/master/team_46_report.pdf).
 
 Videos at: <br>
 [Dashboard](https://youtu.be/J9P2MBzP1Wo) <br>
