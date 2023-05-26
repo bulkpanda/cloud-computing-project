@@ -24,8 +24,9 @@ In this project, six virtual machines (Ubuntu) were built on the [Nectar](https:
 <img src="https://github.com/bulkpanda/cloud-computing-project/blob/master/images/architecture.png" alt="architecture" width="50%">
 
 #### 1.2. The Website Demo
-
-
+<img src="https://github.com/bulkpanda/cloud-computing-project/blob/master/images/covid_analysis_page.png" alt="architecture" width="50%">
+<img src="https://github.com/bulkpanda/cloud-computing-project/blob/master/images/profanity_analysis_page.png" alt="architecture" width="50%">
+<img src="https://github.com/bulkpanda/cloud-computing-project/blob/master/images/mastodon_analysis_page.png" alt="architecture" width="50%">
 
 ### 2. Some Relevant Technology Stacks
 
